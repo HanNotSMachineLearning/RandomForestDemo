@@ -11,4 +11,4 @@ Voor deze demo dienen een aantal zaken geïnstalleerd te zijn op de omgeving waa
 - Pandas versie 0.22, (https://pandas.pydata.org/)
 
 Verder is de code gemaakt en uitgevoerd in PyCharm versie 2018.1.2
-
+De code wordt tevens ondersteunt door check-in commentaar boven de code, zodat alles duidelijk is waarom het gebruikt wordt.
