@@ -9,6 +9,9 @@ Voor deze demo dienen een aantal zaken geïnstalleerd te zijn op de omgeving waa
 - Pip versie 10.0.1, (https://pypi.org/project/pip/10.0.1/) 
 - Numpy versie 1.14.3, (http://www.numpy.org/)
 - Pandas versie 0.22, (https://pandas.pydata.org/)
+- scikit-learn versie 0.19.1 (http://scikit-learn.org)
+- scipy versie 1.1.0 (https://www.scipy.org/)
 
 Verder is de code gemaakt en uitgevoerd in PyCharm versie 2018.1.2
 De code wordt tevens ondersteunt door check-in commentaar boven de code, zodat alles duidelijk is waarom het gebruikt wordt.
+
