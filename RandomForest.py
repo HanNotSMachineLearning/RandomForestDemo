@@ -1,58 +1,42 @@
-# Load Flower dataset for testing purposes
-from sklearn.datasets import load_iris
-
+import csv
 # Load random forest classifier
 from sklearn.ensemble import RandomForestClassifier
-
-# Load pandas
-import pandas as pd
+from sklearn import metrics
+from sklearn.datasets import load_iris
+iris = load_iris()
 
 # Load Numpy
 import numpy as np
 
 np.random.seed(0)
 
-# Load flower dataset into iris
-iris = load_iris()
+available_diseases = ['Astma', 'Bronchitis', 'Griep', 'Longontsteking', 'Verkoudheid']
+with open('Trainingsdata.csv', 'r') as DataFile:
+    csv_file = list(csv.reader(DataFile))
+    available_training_symptoms = list(
+        map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
+    trainData = csv_file[1:]
 
-# Create table for the data
-df = pd.DataFrame(iris.data, columns=iris.feature_names)
+with open('Testdata.csv', 'r') as csvFile:
+    csv_file = list(csv.reader(csvFile))
+    available_test_symptoms = list(
+        map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
+    testData = csv_file[1:]
 
-# Add species column
-df['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
+test_features = []
+test_labels = []
 
-# Add training column, used to split up data in training and test data
-df['is_train'] = np.random.uniform(0, 1, len(df)) <= .75
+train_features = []
+train_labels = []
 
-# Create trainingdata to train the algorithm
-train = df[df['is_train'] == True]
+for item in trainData:
+    train_labels.append(item[-1])
+    train_features.append(item[:-1].copy())
 
-# Create testdata to try the algorithm on
-test = df[df['is_train'] == False]
-
-# Specify the features to use(column names)
-features = df.columns[:4]
-
-# Convert species names into int
-y = pd.factorize(train['species'])[0]
-
-# Create random forest classifier
+for item in testData:
+    test_labels.append(item[-1])
+    test_features.append(item[:-1].copy())
 clf = RandomForestClassifier(n_estimators=25, random_state=0)
-
-# Train the algorithm with the training data
-clf.fit(train[features], y)
-
-# Predict the species of the testing data
-clf.predict(test[features])
-
-# Can be used to see the probability for each species
-clf.predict_proba(test[features])
-
-# Create species name for predicted plants
-preds = iris.target_names[clf.predict(test[features])]
-
-# Create crosstab with predicted and actual flowers. Diagonal values are correctly specified, the others aren't
-print(pd.crosstab(test['species'], preds, rownames=['Actual Species'], colnames=['Predicted Species']))
-
-# Displays the importance of the feature in predicting the species
-print(list(zip(train[features], clf.feature_importances_)))
+clf.fit(train_features, train_labels)
+pred = clf.predict(test_features)
+print('Accuraatheid is: ' + str(metrics.accuracy_score(test_labels, pred)))
