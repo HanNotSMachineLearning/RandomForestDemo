@@ -1,12 +1,18 @@
 Repo voldoet niet aan de standaard zoals in de prototype kit gedefinieerd:
 - Repository heeft geen duidelijke naam
+    --Aangepast naar RandomForestPrototype
 - topics deelvraag8 & prototype zijn niet toegevoegd
-- Datasets staan dubbel in de repo, één keer als CSV en één keer als XLSX, die XLSX zijn naar mijn weten overbodig, dan hoeven ze niet in de repo te staan.
+    --topics toegevoegd
+- Datasets staan dubbel in de repo, Ã©Ã©n keer als CSV en Ã©Ã©n keer als XLSX, die XLSX zijn naar mijn weten overbodig, dan hoeven ze niet in de repo te staan.
+    --Was per ongeluk meegepushed, weggehaald
 
 README voldoet niet aan de template:
 - In de titel staat: 'Random/Decision forest', aangezien het prototype over random forest gaat hoeft decision forest hierin niet benoemd te worden. Ook controleren in de rest van de tekst.
+    --Was nog zo neergezet vanwege extra text. Random forest == Decision forest. aangepast
 - Onder afhankelijkheden staan scikit-learn & Numpy dit zijn echter modules die te installeren zijn via PIP. Ze horen dus in de lijs in het hoofdstuk Installatie, zoals beschreven in de prototypekit. Ze ontbreken ook in requirements.
+    --toegevoegd aan installatie.
 - Het hoofdstuk Code met de bijbehorende code van de applicatie ontbreekt.
+    --hoofdstuk met code is nergens voor nodig. Dit wordt praktisch nergens anders gedaan op github, aangezien iedereen de code weet te   vinden. is alleen maar bladvulling
 
 
 Voor de rest is alles prima, volgende keer alleen graag de stappen uit de prototypekit volgen.
