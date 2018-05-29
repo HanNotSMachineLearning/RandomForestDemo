@@ -23,8 +23,6 @@ Zoals eerder genoemd is het prototype geschreven in python, om precies te zijn v
 
 - Python versie 3.6   	            (https://www.python.org/downloads/release/python-365/)
 - Pip versie 10.0                   (https://pip.pypa.io/en/stable/installing/)
-- scikit-learn versie 0.19.1        (http://scikit-learn.org)
-- Numpy versie 1.14.3               (http://www.numpy.org/)
 
 ```
 !-- LETOP --!
@@ -36,6 +34,9 @@ Hiervoor is een optie te vinden in de installatiewizzard van Python.
 
 Om het prototype te draaien dienen er een aantal externe packages geïnstalleerd te worden.
 Al deze packages zijn te installeren door het commando `pip install -r requirements.txt --user` uit te voeren in een Terminal venster in de projectfolder van het prototype. Dit commando zorgt ervoor dat alle benodigde packages in een keer gedownload worden.
+
+- scikit-learn versie 0.19.1        (http://scikit-learn.org)
+- Numpy versie 1.14.3               (http://www.numpy.org/)
 
 ## Opstarten
 
