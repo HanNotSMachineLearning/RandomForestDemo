@@ -27,6 +27,18 @@ De onderstaande tabel bevat de waardes van de gemiddelde accuraatheids percentag
 | **75% van de dataset**   |           |            |            |
 | **100%  van de dataset** |           |            |            |
 
+#### Aantal decision trees
+
+In dit specifieke algoritme zijn er ook meerdere decision trees, die samen een antwoord geven. Het belangrijk om te kijken tot welk punt meerdere decision trees een verschil maakt in de accuraatheid van het algoritme. Dit wordt getest met de gemaakte testdataset
+
+| Decision trees           | Developer | Reviewer 1 | Reviewer 2 |
+| ------------------------ | --------- | ---------- | ---------- |
+| **1 Decision tree**      |           |            |            |
+| **5 Decision trees**     |           |            |            |
+| **10 Decision trees**    |           |            |            |
+| **25 Decision trees**    |           |            |            |
+| **50 Decision trees**    |           |            |            |
+
 #### Aantal ingevoerde symptomen
 
 Naast de afhankelijkheid van de accuraatheid ten opzichte van de grootte van de dataset is ook de accuraatheid van het prototype getest ten opzichte van het aantal ingevoerde symptomen waarmee de voorspelling moet worden gedaan. 
