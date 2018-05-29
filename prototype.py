@@ -8,6 +8,8 @@ import numpy as np
 
 np.random.seed(0)
 
+amount_trees = 25
+
 # Lijst van beschikbare ziekten
 available_diseases = ['Astma', 'Bronchitis', 'Griep', 'Longontsteking', 'Verkoudheid']
 datasize = None
@@ -46,7 +48,7 @@ for item in testData:
     test_features.append(item[:-1].copy())
 
 
-clf = RandomForestClassifier(n_estimators=25, random_state=0)
+clf = RandomForestClassifier(n_estimators=amount_trees, random_state=0)
 clf.fit(train_features, train_labels)
 pred = clf.predict(test_features)
 print('Accuraatheid is: ' + str(metrics.accuracy_score(test_labels, pred)))
