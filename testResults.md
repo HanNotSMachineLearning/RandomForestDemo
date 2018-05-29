@@ -4,7 +4,7 @@ In dit document staan de verschillende resultaten van het testen van het prototy
 
 Developer: Eric Jans		
 
-Reviewer 1:		
+Reviewer 1:	Robin Bozan
 
 Reviewer 2:		
 
@@ -23,10 +23,10 @@ In de onderstaande tabel is ervan uit gegaan dat de standaard hoeveelheid decisi
 
 | Percentage data          | Developer | Reviewer 1 | Reviewer 2 |
 | ------------------------ | --------- | ---------- | ---------- |
-| **25% van de dataset**   |  0,66666  |            |            |
-| **50% van de dataset**   |  0,86667  |            |            |
-| **75% van de dataset**   |  0,86667  |            |            |
-| **100%  van de dataset** |  0,86667  |            |            |
+| **25% van de dataset**   |  0,66666  | 66,67 %    |            |
+| **50% van de dataset**   |  0,86667  | 86,67 %    |            |
+| **75% van de dataset**   |  0,86667  | 86,67 %    |            |
+| **100%  van de dataset** |  0,86667  | 86,67 %    |            |
 
 #### Aantal decision trees
 
@@ -34,11 +34,11 @@ In dit specifieke algoritme zijn er ook meerdere decision trees die samen een an
 
 | Decision trees           | Developer | Reviewer 1 | Reviewer 2 |
 | ------------------------ | --------- | ---------- | ---------- |
-| **1 Decision tree**      |  0,53333  |            |            |
-| **5 Decision trees**     |  0,83334  |            |            |
-| **10 Decision trees**    |  0,90000  |            |            |
-| **25 Decision trees**    |  0,86667  |            |            |
-| **50 Decision trees**    |  0,93333  |            |            |
+| **1 Decision tree**      |  0,53333  | 43,33 %    |            |
+| **5 Decision trees**     |  0,83334  | 83,33 %    |            |
+| **10 Decision trees**    |  0,90000  | 90 %       |            |
+| **25 Decision trees**    |  0,86667  | 86,67 %    |            |
+| **50 Decision trees**    |  0,93333  | 93,33 %    |            |
 
 #### Aantal ingevoerde symptomen
 
@@ -53,10 +53,10 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | developer            |        Vrouw          |         20         |      Keelpijn     |         Griep          |               Nee               |
 | developer            |        Vrouw          |         52         | Gebrek aan eetlust|       Verkoudheid      |               Nee               |
 | developer            |        Man            |         43         |     Hoofdpijn     |       Verkoudheid      |               Nee               |
-| reviewer 1           |                       |                    |                   |                        |                                 |
-| reviewer 1           |                       |                    |                   |                        |                                 |
-| reviewer 1           |                       |                    |                   |                        |                                 |
-| reviewer 1           |                       |                    |                   |                        |                                 |
+| reviewer 1           | man                   | 85                 | koorts            | griep                  | n (bronchitis)                  |
+| reviewer 1           | vrouw                 | 35                 | vermoeidheid      | verkoudheid            | j                               |
+| reviewer 1           | vrouw                 | 73                 | keelpijn          | griep                  | j                               |
+| reviewer 1           | vrouw                 | 90                 | hoofdpijn         | verkoudheid            | n (griep)                       |
 | reviewer 2           |                       |                    |                   |                        |                                 |
 | reviewer 2           |                       |                    |                   |                        |                                 |
 | reviewer 2           |                       |                    |                   |                        |                                 |
@@ -68,10 +68,10 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | developer             |         Man           |         51         | Hoofdpijn, Hoesten |     Longontsteking     |              Nee                |
 | developer             |        Vrouw          |         32         | Niezen, Hoesten    |       Verkoudheid      |              Ja                 |
 | developer             |         Man           |          6         |Koorts, Vermoeidheid|       Verkoudheid      |              Ja                 |
-| reviewer 1            |                       |                    |                    |                        |                                 |
-| reviewer 1            |                       |                    |                    |                        |                                 |
-| reviewer 1            |                       |                    |                    |                        |                                 |
-| reviewer 1            |                       |                    |                    |                        |                                 |
+| reviewer 1            | vrouw                 | 21                 | hoesten, niezen    | verkoudheid            | j                               |
+| reviewer 1            | man                   | 43                 | hoesten, hoge slijmproductie | bronchitis   | j                               |
+| reviewer 1            | vrouw                 | 62                 | keelpijn, verstopte neus | verkoudheid      | n (griep)                       |
+| reviewer 1            | man                   | 18                 | spierpijn, keelpijn| griep                  | j                               |
 | reviewer 2            |                       |                    |                    |                        |                                 |
 | reviewer 2            |                       |                    |                    |                        |                                 |
 | reviewer 2            |                       |                    |                    |                        |                                 |
@@ -83,10 +83,10 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | developer             |         Man           |          7         |Koorts, Hoesten, Spierpijn               |      Verkoudheid       |               Nee               |
 | developer             |         Man           |         52         |Keelpijn, Spierpijn, Verstopte Neus      |          Griep         |               Ja                |
 | developer             |        Vrouw          |         66         |Hoesten, Vermoeidheid, Gebrek aan eetlust|     Longontsteking     |               Ja                |
-| reviewer 1            |                       |                    |                                         |                        |                                 |
-| reviewer 1            |                       |                    |                                         |                        |                                 |
-| reviewer 1            |                       |                    |                                         |                        |                                 |
-| reviewer 1            |                       |                    |                                         |                        |                                 |
+| reviewer 1            | vrouw                 | 33                 | hoesten, koorts, kortademig             | longontsteking         | n (astma)                       |
+| reviewer 1            | man                   | 22                 | hoesten, niezen, spierpijn              | verkoudheid            | j                               |
+| reviewer 1            | vrouw                 | 44                 | kortademig, benauwdheid, piepende ademhaling | astma             | j                               |
+| reviewer 1            | man                   | 53                 | keelpijn, spierpijn, gebrek aan eetlust | griep                  | j                               |
 | reviewer 2            |                       |                    |                                         |                        |                                 |
 | reviewer 2            |                       |                    |                                         |                        |                                 |
 | reviewer 2            |                       |                    |                                         |                        |                                 |
@@ -98,10 +98,10 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | developer             |         Vrouw         |         33         | Hoesten,Spierpijn,Koorts,Piepende ademhaling       |Bronchitis              |Ja                               |
 | developer             |         Man           |         41         | Kortademig,Benauwdheid, Piepende ademhaling, Niezen|Astma                   |Ja                               |
 | developer             |         Vrouw         |         16         | Hoesten,Niezen,Vermoeidheid,Hoofdpijn              |Verkoudheid             |Ja                               |
-| reviewer 1            |                       |                    |                                                    |                        |                                 |
-| reviewer 1            |                       |                    |                                                    |                        |                                 |
-| reviewer 1            |                       |                    |                                                    |                        |                                 |
-| reviewer 1            |                       |                    |                                                    |                        |                                 |
+| reviewer 1            | vrouw                 | 53                 | neusvleugelen, kortademig, hoofdpijn, vermoeidheid | longontsteking         | j                               |
+| reviewer 1            | man                   | 43                 | hoesten, benauwdheid, kortademig, piepende ademhaling | astma               | j                               |
+| reviewer 1            | vrouw                 | 56                 | spierpijn, keelpijn, hoesten, hoofdpijn            | griep                  | j                               |
+| reviewer 1            | man                   | 33                 | pijn bij borst, hoofdpijn, vermoeidheid, gebrek aan eetlust | longontsteking| j                               |
 | reviewer 2            |                       |                    |                                                    |                        |                                 |
 | reviewer 2            |                       |                    |                                                    |                        |                                 |
 | reviewer 2            |                       |                    |                                                    |                        |                                 |
@@ -113,10 +113,10 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | developer             |       Vrouw           |          8         |Koorts,Hoesten,Niezen,Spierpijn,Keelpijn                    |Verkoudheid             |Ja                               |
 | developer             |       Vrouw           |         41         |Koorts,Hoesten,Hoofdpijn,Keelpijn,Spierpijn                 |Griep                   |Ja                               |
 | developer             |       Man             |          5         |Neusvleugelen, Koorts, Kortademig,Vermoeidheid,Hoesten      |Longontsteking          |Ja                               |
-| reviewer 1            |                       |                    |                                                            |                        |                                 |
-| reviewer 1            |                       |                    |                                                            |                        |                                 |
-| reviewer 1            |                       |                    |                                                            |                        |                                 |
-| reviewer 1            |                       |                    |                                                            |                        |                                 |
+| reviewer 1            | man                   | 44                 | koorts, kortademig, vermoeidheid, hoesten, neusvleugelen   | longontsteking         | j                               |
+| reviewer 1            | man                   | 63                 | keelpijn, hoofdpijn, spierpijn, niezen, hoesten            | verkoudheid            | j                               |
+| reviewer 1            | vrouw                 | 66                 | gebrek aan eetlust, vermoeidheid, pijn bij borst, koorts, hoesten | longontsteking  | j                               |
+| reviewer 1            | man                   | 23                 | hoesten, hoge slijmproductie, piepende ademhaling, koorts, spierpijn | bronchitis   | j                               |
 | reviewer 2            |                       |                    |                                                            |                        |                                 |
 | reviewer 2            |                       |                    |                                                            |                        |                                 |
 | reviewer 2            |                       |                    |                                                            |                        |                                 |
