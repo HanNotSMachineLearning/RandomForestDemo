@@ -1,0 +1,12 @@
+Repo voldoet niet aan de standaard zoals in de prototype kit gedefinieerd:
+- Repository heeft geen duidelijke naam
+- topics deelvraag8 & prototype zijn niet toegevoegd
+- Datasets staan dubbel in de repo, één keer als CSV en één keer als XLSX, die XLSX zijn naar mijn weten overbodig, dan hoeven ze niet in de repo te staan.
+
+README voldoet niet aan de template:
+- In de titel staat: 'Random/Decision forest', aangezien het prototype over random forest gaat hoeft decision forest hierin niet benoemd te worden. Ook controleren in de rest van de tekst.
+- Onder afhankelijkheden staan scikit-learn & Numpy dit zijn echter modules die te installeren zijn via PIP. Ze horen dus in de lijs in het hoofdstuk Installatie, zoals beschreven in de prototypekit. Ze ontbreken ook in requirements.
+- Het hoofdstuk Code met de bijbehorende code van de applicatie ontbreekt
+
+
+Voor de rest is alles prima, volgende keer alleen graag de stappen uit de prototypekit volgen.
