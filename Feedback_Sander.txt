@@ -12,7 +12,7 @@ README voldoet niet aan de template:
 - Onder afhankelijkheden staan scikit-learn & Numpy dit zijn echter modules die te installeren zijn via PIP. Ze horen dus in de lijs in het hoofdstuk Installatie, zoals beschreven in de prototypekit. Ze ontbreken ook in requirements.
     --toegevoegd aan installatie.
 - Het hoofdstuk Code met de bijbehorende code van de applicatie ontbreekt.
-    --hoofdstuk met code is nergens voor nodig. Dit wordt praktisch nergens anders gedaan op github, aangezien iedereen de code weet te   vinden. is alleen maar bladvulling. Heb het toch maar toegevoegd maar volgende keer is dit nergens voor nodig
+    --hoofdstuk met code is nergens voor nodig. Dit wordt praktisch nergens anders gedaan op github, aangezien iedereen de code weet te   vinden. is alleen maar bladvulling. Code in markdown zoals dit heeft alleen nut als je de code ook uit gaat leggen, ofwel kleine fragmenten van code. Heb het toch maar toegevoegd maar volgende keer is dit nergens voor nodig
 
 
 Voor de rest is alles prima, volgende keer alleen graag de stappen uit de prototypekit volgen.
