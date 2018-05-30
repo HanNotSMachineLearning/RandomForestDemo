@@ -8,16 +8,30 @@ import numpy as np
 
 np.random.seed(0)
 
-amount_trees = 25
-
-# Lijst van beschikbare ziekten
-available_diseases = ['Astma', 'Bronchitis', 'Griep', 'Longontsteking', 'Verkoudheid']
 datasize = None
 while datasize is None:
     print("\nKies een dataset: 25, 50, 75 of 100:")
     datasize = input("")
 
-#Uitlezen van bestand en filteren van data
+amount_trees = None
+amount_trees_message = None
+while amount_trees is None:
+    amount_trees_message = "\nKies de aantal decision tree: 1, 5, 10, 25 of 50:"
+    print(amount_trees_message)
+    amount_trees_before_checked = int(input(""))
+    if amount_trees_before_checked == 1 or amount_trees_before_checked == 5 or amount_trees_before_checked == 10 or amount_trees_before_checked == 25 or amount_trees_before_checked == 50:
+        amount_trees = amount_trees_before_checked
+    else:
+        amount_trees_message = "invalid input"
+        print(amount_trees_message)
+        amount_trees = None
+
+
+# Lijst van beschikbare ziekten
+available_diseases = ['Astma', 'Bronchitis',
+                      'Griep', 'Longontsteking', 'Verkoudheid']
+
+# Uitlezen van bestand en filteren van data
 with open('Data/Dataset-'+datasize+'.csv', 'r') as DataFile:
     csv_file = list(csv.reader(DataFile))
     available_training_symptoms = list(
