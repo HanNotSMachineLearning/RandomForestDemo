@@ -38,7 +38,7 @@ In dit specifieke algoritme zijn er ook meerdere decision trees die samen een an
 | **25 Decision trees** | 86,67%    | 86,67 %    | 86,67%     |
 | **50 Decision trees** | 93,33%    | 93,33 %    | 93,33%     |
 
-#### Aantal ingevoerde symptomen
+#### Aantal ingevoerde symptomen bij 25 trees
 
 Naast de afhankelijkheid van de accuraatheid ten opzichte van de grootte van de dataset is ook de accuraatheid van het prototype getest ten opzichte van het aantal ingevoerde symptomen waarmee de voorspelling moet worden gedaan.
 
@@ -119,3 +119,87 @@ Ook bij deze tabellen wordt uitgegaan van de standaard 25 trees.
 | reviewer 2            | man                   | 13                 | Neusvleugelen, Koorts, Kortademig,Vermoeidheid,Hoesten               | longontsteking         | j                               |
 | reviewer 2            | vrouw                 | 12                 | Kortademig, Benauwdheid, Hoesten, Piepende ademhaling, Spierpijn     | astma                  | j                               |
 | reviewer 2            | vrouw                 | 27                 | Koorts, Hoesten, Hoofdpijn, Keelpijn, Hoge slijmproductie            | griep                  | n (bronchitis)                  |
+
+
+
+#### Aantal ingevoerde symptomen bij 50 trees
+
+Naast de afhankelijkheid van de accuraatheid ten opzichte van de grootte van de dataset is ook de accuraatheid van het prototype getest ten opzichte van het aantal ingevoerde symptomen waarmee de voorspelling moet worden gedaan.
+
+In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd om de accuraatheid te bepalen.
+Ook bij deze tabellen wordt uitgegaan van 50 trees.
+
+| 1 symptoom ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom   | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
+| -------------------- | --------------------- | ------------------ | ------------------- | ---------------------- | ------------------------------- |
+| developer            | Man                   | 23                 | Benauwdheid         | Astma                  | Ja                              |
+| developer            | Vrouw                 | 20                 | Keelpijn            | Griep                  | Ja                              |
+| developer            | Vrouw                 | 52                 | Gebrek aan eetlust  | Verkoudheid            | Ja                              |
+| developer            | Man                   | 43                 | Hoofdpijn           | Verkoudheid            | Nee(griep)                      |
+| reviewer 1           | man                   | 85                 | koorts              | griep                  | Nee(bronchitis)                 |
+| reviewer 1           | vrouw                 | 35                 | vermoeidheid        | verkoudheid            | Ja                              |
+| reviewer 1           | vrouw                 | 73                 | keelpijn            | griep                  | Ja                              |
+| reviewer 1           | vrouw                 | 90                 | hoofdpijn           | verkoudheid            | Nee(griep)                      |
+| reviewer 2           | man                   | 9                  | verstopte neus      | verkoudheid            | Ja                              |
+| reviewer 2           | man                   | 29                 | piepende ademhaling | astma                  | Ja                              |
+| reviewer 2           | vrouw                 | 38                 | Pijn bij borst      | longontsteking         | Ja                              |
+| reviewer 2           | vrouw                 | 10                 | Hoge slijmproductie | Bronchitis             | Ja                              |
+
+| 2 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                   | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
+| --------------------- | --------------------- | ------------------ | ----------------------------------- | ---------------------- | ------------------------------- |
+| developer             | Vrouw                 | 26                 | Hoesten, Koorts                     | Griep                  | Nee(bronchitis)                 |
+| developer             | Man                   | 51                 | Hoofdpijn, Hoesten                  | Longontsteking         | Nee(griep)                      |
+| developer             | Vrouw                 | 32                 | Niezen, Hoesten                     | Verkoudheid            | Ja                              |
+| developer             | Man                   | 6                  | Koorts, Vermoeidheid                | Verkoudheid            | Ja                              |
+| reviewer 1            | vrouw                 | 21                 | hoesten, niezen                     | verkoudheid            | Ja                              |
+| reviewer 1            | man                   | 43                 | hoesten, hoge slijmproductie        | bronchitis             | Ja                              |
+| reviewer 1            | vrouw                 | 62                 | keelpijn, verstopte neus            | verkoudheid            | Nee(griep)                      |
+| reviewer 1            | man                   | 18                 | spierpijn, keelpijn                 | griep                  | Ja                              |
+| reviewer 2            | man                   | 10                 | hoge slijmproductie, verstopte neus | bronchitis             | Ja                              |
+| reviewer 2            | man                   | 45                 | neusvleugelen, hoofdpijn            | verkoudheid            | Nee(griep)                      |
+| reviewer 2            | vrouw                 | 37                 | Hoofdpijn, Vermoeidheid             | griep                  | Nee(verkoudheid)                |
+| reviewer 2            | vrouw                 | 15                 | piepende ademhaling, kortademig     | longontsteking         | Nee(astma)                      |
+
+| 3 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                             | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
+| --------------------- | --------------------- | ------------------ | --------------------------------------------- | ---------------------- | ------------------------------- |
+| developer             | Man                   | 23                 | Koorts, Hoesten, Spierpijn                    | Bronchitis             | Nee(griep)                      |
+| developer             | Man                   | 7                  | Koorts, Hoesten, Spierpijn                    | Verkoudheid            | Nee(bronchitis)                 |
+| developer             | Man                   | 52                 | Keelpijn, Spierpijn, Verstopte Neus           | Griep                  | Ja                              |
+| developer             | Vrouw                 | 66                 | Hoesten, Vermoeidheid, Gebrek aan eetlust     | Longontsteking         | Ja                              |
+| reviewer 1            | vrouw                 | 33                 | hoesten, koorts, kortademig                   | longontsteking         | Nee(astma)                      |
+| reviewer 1            | man                   | 22                 | hoesten, niezen, spierpijn                    | verkoudheid            | Ja                              |
+| reviewer 1            | vrouw                 | 44                 | kortademig, benauwdheid, piepende ademhaling  | astma                  | Ja                              |
+| reviewer 1            | man                   | 53                 | keelpijn, spierpijn, gebrek aan eetlust       | griep                  | Ja                              |
+| reviewer 2            | man                   | 16                 | verstopte neus, spierpijn, keelpijn           | verkoudheid            | Ja                              |
+| reviewer 2            | man                   | 33                 | kortademig, benauwdheid, hoesten              | astma                  | Ja                              |
+| reviewer 2            | vrouw                 | 62                 | Keelpijn, Hoge slijmproductie, Pijn bij borst | griep                  | Nee(longontsteking)             |
+| reviewer 2            | vrouw                 | 13                 | hoesten, piepende ademhaling, kortademig      | bronchitis             | Nee(astma)                      |
+
+| 4 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                                           | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
+| --------------------- | --------------------- | ------------------ | ----------------------------------------------------------- | ---------------------- | ------------------------------- |
+| developer             | Vrouw                 | 23                 | Koorts,Hoofdpijn,Hoesten,Keelpijn                           | Griep                  | Ja                              |
+| developer             | Vrouw                 | 33                 | Hoesten,Spierpijn,Koorts,Piepende ademhaling                | Bronchitis             | Ja                              |
+| developer             | Man                   | 41                 | Kortademig,Benauwdheid, Piepende ademhaling, Niezen         | Astma                  | Ja                              |
+| developer             | Vrouw                 | 16                 | Hoesten,Niezen,Vermoeidheid,Hoofdpijn                       | Verkoudheid            | Ja                              |
+| reviewer 1            | vrouw                 | 53                 | neusvleugelen, kortademig, hoofdpijn, vermoeidheid          | longontsteking         | Ja                              |
+| reviewer 1            | man                   | 43                 | hoesten, benauwdheid, kortademig, piepende ademhaling       | astma                  | Ja                              |
+| reviewer 1            | vrouw                 | 56                 | spierpijn, keelpijn, hoesten, hoofdpijn                     | griep                  | Ja                              |
+| reviewer 1            | man                   | 33                 | pijn bij borst, hoofdpijn, vermoeidheid, gebrek aan eetlust | longontsteking         | Ja                              |
+| reviewer 2            | man                   | 14                 | Hoesten, Keelpijn, Pijn bij borst, Piepende ademhaling      | bronchitis             | Nee(astma)                      |
+| reviewer 2            | man                   | 55                 | hoesten, niezen, spierpijn, hoofdpijn                       | verkoudheid            | Ja                              |
+| reviewer 2            | vrouw                 | 34                 | vermoeidheid, neusvleugelen, hoesten, gebrek aan eetlust    | longontsteking         | Ja                              |
+| reviewer 2            | vrouw                 | 17                 | Gebrek aan eetlust, Hoesten, Koorts, Niezen                 | griep                  | Nee(verkoudheid)                |
+
+| 5 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                                                    | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
+| --------------------- | --------------------- | ------------------ | -------------------------------------------------------------------- | ---------------------- | ------------------------------- |
+| developer             | Man                   | 12                 | Kortademig, Benauwdheid,Piepende ademhaling, Hoesten, Koorts         | Astma                  | Ja                              |
+| developer             | Vrouw                 | 8                  | Koorts,Hoesten,Niezen,Spierpijn,Keelpijn                             | Verkoudheid            | Ja                              |
+| developer             | Vrouw                 | 41                 | Koorts,Hoesten,Hoofdpijn,Keelpijn,Spierpijn                          | Griep                  | Ja                              |
+| developer             | Man                   | 5                  | Neusvleugelen, Koorts, Kortademig,Vermoeidheid,Hoesten               | Longontsteking         | Ja                              |
+| reviewer 1            | man                   | 44                 | koorts, kortademig, vermoeidheid, hoesten, neusvleugelen             | longontsteking         | Ja                              |
+| reviewer 1            | man                   | 63                 | keelpijn, hoofdpijn, spierpijn, niezen, hoesten                      | verkoudheid            | Ja                              |
+| reviewer 1            | vrouw                 | 66                 | gebrek aan eetlust, vermoeidheid, pijn bij borst, koorts, hoesten    | longontsteking         | Ja                              |
+| reviewer 1            | man                   | 23                 | hoesten, hoge slijmproductie, piepende ademhaling, koorts, spierpijn | bronchitis             | Ja                              |
+| reviewer 2            | man                   | 20                 | Hoesten, Keelpijn, Hoge slijmproductie, Pijn bij borst, Kortademig   | longontsteking         | Ja                              |
+| reviewer 2            | man                   | 13                 | Neusvleugelen, Koorts, Kortademig,Vermoeidheid,Hoesten               | longontsteking         | Ja                              |
+| reviewer 2            | vrouw                 | 12                 | Kortademig, Benauwdheid, Hoesten, Piepende ademhaling, Spierpijn     | astma                  | Ja                              |
+| reviewer 2            | vrouw                 | 27                 | Koorts, Hoesten, Hoofdpijn, Keelpijn, Hoge slijmproductie            | griep                  | Ja                              |

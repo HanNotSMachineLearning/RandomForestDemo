@@ -10,13 +10,13 @@ np.random.seed(0)
 
 datasize = None
 while datasize is None:
-    print("\nKies een dataset: 25, 50, 75 of 100:")
+    print("\nKies de grootte van de dataset: 25, 50, 75 of 100:")
     datasize = input("")
 
 amount_trees = None
 amount_trees_message = None
 while amount_trees is None:
-    amount_trees_message = "\nKies de aantal decision tree: 1, 5, 10, 25 of 50:"
+    amount_trees_message = "\nKies het aantal decision trees: 1, 5, 10, 25 of 50:"
     print(amount_trees_message)
     amount_trees_before_checked = int(input(""))
     if amount_trees_before_checked == 1 or amount_trees_before_checked == 5 or amount_trees_before_checked == 10 or amount_trees_before_checked == 25 or amount_trees_before_checked == 50:
@@ -78,7 +78,7 @@ while True:
     while symptoms is None:
         print("\nDe beschikbare symptomen zijn:")
         print(", ".join(available_training_symptoms))
-        print("\nVul uw symptomen in, gescheiden door een comma:")
+        print("\nVul uw symptomen in, gescheiden door een komma:")
         symptoms = list(map(lambda v: v.strip().lower(), input("").split(",")))
 
         existing_symptoms = list(
