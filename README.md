@@ -49,9 +49,11 @@ import csv
 
 # Load random forest classifier
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble
+import RandomForestClassifier
 
-from sklearn import metrics
+from sklearn
+import metrics
 
 
 
@@ -71,7 +73,7 @@ while datasize is None:
 
     print("\nKies de grootte van de dataset: 25, 50, 75 of 100:")
 
-    datasize = input("")
+datasize = input("")
 
 
 
@@ -83,22 +85,21 @@ while amount_trees is None:
 
     amount_trees_message = "\nKies het aantal decision trees: 1, 5, 10, 25 of 50:"
 
-    print(amount_trees_message)
+print(amount_trees_message)
 
-    amount_trees_before_checked = int(input(""))
+amount_trees_before_checked = int(input(""))
 
-    if amount_trees_before_checked == 1 or amount_trees_before_checked == 5 or amount_trees_before_checked == 10 or amount_trees_before_checked == 25 or amount_trees_before_checked == 50:
+if amount_trees_before_checked == 1 or amount_trees_before_checked == 5 or amount_trees_before_checked == 10 or amount_trees_before_checked == 25 or amount_trees_before_checked == 50:
 
-        amount_trees = amount_trees_before_checked
+    amount_trees = amount_trees_before_checked
 
-    else:
+else :
 
-        amount_trees_message = "invalid input"
+    amount_trees_message = "invalid input"
 
-        print(amount_trees_message)
+print(amount_trees_message)
 
-        amount_trees = None
-
+amount_trees = None
 
 
 
@@ -107,21 +108,22 @@ while amount_trees is None:
 
 available_diseases = ['Astma', 'Bronchitis',
 
-                      'Griep', 'Longontsteking', 'Verkoudheid']
+    'Griep', 'Longontsteking', 'Verkoudheid'
+]
 
 
 
 # Uitlezen van bestand en filteren van data
 
-with open('Data/Dataset-'+datasize+'.csv', 'r') as DataFile:
+with open('Data/Dataset-' + datasize + '.csv', 'r') as DataFile:
 
     csv_file = list(csv.reader(DataFile))
 
-    available_training_symptoms = list(
+available_training_symptoms = list(
 
-        map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
+    map(lambda v: v.strip().lower(), csv_file[0]))[2: -1]
 
-    trainData = csv_file[1:]
+trainData = csv_file[1: ]
 
 
 
@@ -131,11 +133,11 @@ with open('Data/TestDataset.csv', 'r') as csvFile:
 
     csv_file = list(csv.reader(csvFile))
 
-    available_test_symptoms = list(
+available_test_symptoms = list(
 
-        map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
+    map(lambda v: v.strip().lower(), csv_file[0]))[2: -1]
 
-    testData = csv_file[1:]
+testData = csv_file[1: ]
 
 
 
@@ -157,7 +159,7 @@ for item in trainData:
 
     train_labels.append(item[-1])
 
-    train_features.append(item[:-1].copy())
+train_features.append(item[: -1].copy())
 
 
 
@@ -167,13 +169,12 @@ for item in testData:
 
     test_labels.append(item[-1])
 
-    test_features.append(item[:-1].copy())
+test_features.append(item[: -1].copy())
 
 
 
 
-
-clf = RandomForestClassifier(n_estimators=amount_trees, random_state=0)
+clf = RandomForestClassifier(n_estimators = amount_trees, random_state = 0)
 
 clf.fit(train_features, train_labels)
 
@@ -187,73 +188,75 @@ while True:
 
     print("\nWat is uw geslacht? (0 voor VROUW, 1 voor MAN)")
 
-    geslacht = int(input(""))
+geslacht = int(input(""))
 
 
 
-    print("\nWat is uw leeftijd?")
+print("\nWat is uw leeftijd?")
 
-    leeftijd = int(input(""))
-
-
-
-    symptoms = None
-
-    while symptoms is None:
-
-        print("\nDe beschikbare symptomen zijn:")
-
-        print(", ".join(available_training_symptoms))
-
-        print("\nVul uw symptomen in, gescheiden door een komma:")
-
-        symptoms = list(map(lambda v: v.strip().lower(), input("").split(",")))
+leeftijd = int(input(""))
 
 
 
-        existing_symptoms = list(
+symptoms = None
 
-            filter(lambda v: v in available_training_symptoms, symptoms))
+while symptoms is None:
 
+    print("\nDe beschikbare symptomen zijn:")
 
+print(", ".join(available_training_symptoms))
 
-        if len(existing_symptoms) != len(symptoms):
+print("\nVul uw symptomen in, gescheiden door een komma:")
 
-            print("\nU mag alleen symptomen opnoemen die bij ons geregistreerd zijn. De symptomen die u invulde maar niet bij ons geregistreerd staan zijn:")
-
-            not_existing_symptoms = list(
-
-                set(symptoms) - set(existing_symptoms))
-
-            print(", ".join(not_existing_symptoms))
+symptoms = list(map(lambda v: v.strip().lower(), input("").split(",")))
 
 
 
-            symptoms = None
+existing_symptoms = list(
 
-    symptoms_array = [geslacht, leeftijd]
-
-    for available_symptom in available_training_symptoms:
-
-        symptoms_array.append(1 if available_symptom in symptoms else 0)
+    filter(lambda v: v in available_training_symptoms, symptoms))
 
 
 
-    prediction = int(clf.predict([symptoms_array])[0])
+if len(existing_symptoms) != len(symptoms):
+
+    print("\nU mag alleen symptomen opnoemen die bij ons geregistreerd zijn. De symptomen die u invulde maar niet bij ons geregistreerd staan zijn:")
+
+not_existing_symptoms = list(
+
+    set(symptoms) - set(existing_symptoms))
+
+print(", ".join(not_existing_symptoms))
 
 
 
-    print("\n\n--> De applicatie geeft aan dat u waarschijnlijk de volgende ziekte heeft:")
+symptoms = None
 
-    print(available_diseases[prediction])
+symptoms_array = [geslacht, leeftijd]
 
-    print("\nUw ziekte is bepaald. Druk op 'j' om de applicatie te herstarten.")
+for available_symptom in available_training_symptoms:
 
-    again = input("")
+    symptoms_array.append(1
+        if available_symptom in symptoms
+        else 0)
 
-    if again.upper() != "J":
 
-        break
+
+prediction = int(clf.predict([symptoms_array])[0])
+
+
+
+print("\n\n--> De applicatie geeft aan dat u waarschijnlijk de volgende ziekte heeft:")
+
+print(available_diseases[prediction])
+
+print("\nUw ziekte is bepaald. Druk op 'j' om de applicatie te herstarten.")
+
+again = input("")
+
+if again.upper() != "J":
+
+    break
 
 
 
