@@ -1,4 +1,4 @@
-# Testresultaten - ...
+# Testresultaten - Random/Decision forest algoritme prototype
 
 In dit document staan de verschillende resultaten van het testen van het prototype uitgewerkt.
 
